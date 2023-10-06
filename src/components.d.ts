@@ -7,6 +7,8 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AppRoot {
+        "count": number;
+        "docsHint": string;
     }
 }
 declare global {
@@ -22,6 +24,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AppRoot {
+        "count"?: number;
+        "docsHint"?: string;
     }
     interface IntrinsicElements {
         "app-root": AppRoot;
