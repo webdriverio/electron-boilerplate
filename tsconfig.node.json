@@ -7,5 +7,5 @@
     "outDir": "dist",
     "esModuleInterop": true
   },
-  "include": ["src/app.ts", "src/preload.ts"]
+  "include": ["src/app.ts", "src/preload.ts", "test/test.e2e.ts"]
 }

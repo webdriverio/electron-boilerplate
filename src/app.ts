@@ -8,6 +8,12 @@ if (squirrelStartup) {
   app.quit()
 }
 
+const isTest = Boolean(process.env.TEST)
+if (isTest) {
+  // @ts-expect-error
+  import('wdio-electron-service/main');
+}
+
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
