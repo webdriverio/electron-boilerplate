@@ -13,9 +13,9 @@
     "package:electron": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "start": "run-s build && run-p start:*",
-    "start:electron": "sleep 2 && electron-forge start",
-    "start:ts": "tsc -w -p ./tsconfig.node.json",
+    "start": "run-p start:*",
+    "start:electron": "sleep 3 && electron-forge start",
+    "start:ts": "sleep 2 && tsc -w -p ./tsconfig.node.json",
     "start:stencil": "stencil build --dev --watch",
     "watch": "run-s start",
     "wdio": "wdio run ./test/wdio.conf.ts"
