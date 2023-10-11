@@ -7,6 +7,8 @@ import type { Options } from '@wdio/types'
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url))
 process.env.TEST = 'true'
 
+process.arch
+
 export const config: Options.Testrunner = {
     //
     // ====================
@@ -64,7 +66,13 @@ export const config: Options.Testrunner = {
       browserName: 'electron',
       browserVersion: '27.0.0',
       'wdio:electronServiceOptions': {
-        appBinaryPath: path.join(__dirname, '..', 'out', 'electron-boilerplate-darwin-arm64', 'electron-boilerplate.app', 'Contents', 'MacOS', 'electron-boilerplate'),
+        appBinaryPath: (
+          process.platform === 'darwin'
+            ? path.join(__dirname, '..', 'out', `electron-boilerplate-${process.platform}-${process.arch}`, 'electron-boilerplate.app', 'Contents', 'MacOS', 'electron-boilerplate')
+            : process.platform === 'win32'
+              ? path.join(__dirname, '..', 'out', `electron-boilerplate-${process.platform}-${process.arch}`, 'electron-boilerplate')
+              : path.join(__dirname, '..', 'out', `electron-boilerplate-${process.platform}-${process.arch}`, 'electron-boilerplate.exe')
+        ),
         appArgs: ['foo', 'bar=baz']
       }
     } as any],
