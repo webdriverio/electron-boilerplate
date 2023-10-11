@@ -1,0 +1,8 @@
+/**
+  * this tsconfig file is used nowhere expect for VS Code to interpret the
+  * files correctly: Stencil application code base using ESM and Electron
+  * utility files using CJS
+  */
+{
+  "extends": "../tsconfig.stencil.json",
+}
