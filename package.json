@@ -8,7 +8,8 @@
     "build": "run-p build:*",
     "build:ts": "sleep 2 && tsc -p ./tsconfig.node.json",
     "build:stencil": "stencil build",
-    "package": "run-s package:*",
+    "clean": "rimraf .stencil dist out",
+    "package": "run-s clean package:*",
     "package:app": "run-s build",
     "package:electron": "NODE_ENV=test electron-forge package",
     "make": "electron-forge make",
@@ -45,6 +46,7 @@
     "@wdio/spec-reporter": "^8.17.0",
     "electron": "27.0.0",
     "npm-run-all": "^4.1.5",
+    "rimraf": "^5.0.5",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2",
     "wdio-electron-service": "^5.1.1"
