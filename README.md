@@ -2,7 +2,7 @@
   <img src="./.github/assets/screenshot.png">
 </center>
 
-# Electron Boilerplate
+# Electron Boilerplate [![CI](https://github.com/webdriverio/electron-boilerplate/actions/workflows/ci.yml/badge.svg)](https://github.com/webdriverio/electron-boilerplate/actions/workflows/ci.yml)
 
 Boilerplate project to demonstrate testing ElectronJS Applications with WebdriverIO.
 
