@@ -6,7 +6,7 @@
   "main": "dist/app.js",
   "scripts": {
     "build": "run-p build:*",
-    "build:ts": "sleep 2 && tsc -p ./tsconfig.node.json",
+    "build:ts": "sleep 2 && tsc -p ./tsconfig.json",
     "build:stencil": "stencil build",
     "clean": "rimraf .stencil dist out",
     "package": "run-s clean package:*",
@@ -16,9 +16,9 @@
     "publish": "electron-forge publish",
     "start": "run-p start:*",
     "start:electron": "sleep 3 && electron-forge start",
-    "start:ts": "sleep 2 && tsc -w -p ./tsconfig.node.json",
+    "start:ts": "sleep 2 && tsc -w -p ./tsconfig.json",
     "start:stencil": "stencil build --dev --watch",
-    "test": "NODE_ENV=test wdio run ./test/wdio.conf.ts",
+    "test": "TS_NODE_PROJECT=./tsconfig.stencil.json NODE_ENV=test wdio run ./test/wdio.conf.ts",
     "watch": "run-s start"
   },
   "keywords": [],
@@ -35,6 +35,7 @@
   "devDependencies": {
     "@electron-forge/cli": "^6.4.2",
     "@electron-forge/maker-deb": "^6.4.2",
+    "@electron-forge/maker-dmg": "^6.4.2",
     "@electron-forge/maker-rpm": "^6.4.2",
     "@electron-forge/maker-squirrel": "^6.4.2",
     "@electron-forge/maker-zip": "^6.4.2",

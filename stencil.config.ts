@@ -5,6 +5,7 @@ export const config: Config = {
   globalStyle: 'src/global/app.css',
   globalScript: 'src/global/app.ts',
   taskQueue: 'async',
+  tsconfig: 'tsconfig.stencil.json',
   outputTargets: [
     {
       type: 'www',

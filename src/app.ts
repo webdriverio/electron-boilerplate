@@ -10,7 +10,7 @@ if (squirrelStartup) {
 
 const isTest = process.env.NODE_ENV === 'test'
 if (isTest) {
-  require('wdio-electron-service/main');
+  require('wdio-electron-service/main')
 }
 
 const createWindow = () => {

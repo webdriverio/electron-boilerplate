@@ -1,26 +1,11 @@
 {
+  "extends": "./tsconfig.stencil.json",
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "allowUnreachableCode": false,
-    "declaration": false,
-    "experimentalDecorators": true,
-    "lib": [
-      "dom",
-      "es2020"
-    ],
-    "moduleResolution": "node",
-    "module": "esnext",
+    "module": "commonjs",
     "target": "es2020",
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "jsx": "react",
-    "jsxFactory": "h",
-    "jsxFragmentFactory": "Fragment"
+    "outDir": "dist",
+    "esModuleInterop": true
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src/app.ts", "src/preload.ts"],
+  "exclude": ["node_modules"]
 }
