@@ -1,9 +1,8 @@
-import { browser } from '@wdio/globals'
+import { expect, browser } from '@wdio/globals'
 
 describe('Electron Testing', () => {
   it('should print application metadata', async () => {
-    const appName = await browser.electron.app('getName')
-    const appVersion = await browser.electron.app('getVersion')
-    console.log('Testing Electron app:', appName, appVersion)
+    expect(await browser.electron.app('getName')).toBe('electron-boilerplate')
+    expect(await browser.electron.app('getVersion')).toBe('1.0.0')
   })
 })
