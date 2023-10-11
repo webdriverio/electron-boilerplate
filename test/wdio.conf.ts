@@ -70,8 +70,8 @@ export const config: Options.Testrunner = {
           process.platform === 'darwin'
             ? path.join(APP_ROOT, 'electron-boilerplate.app', 'Contents', 'MacOS', 'electron-boilerplate')
             : process.platform === 'win32'
-              ? path.join(APP_ROOT, 'electron-boilerplate')
-              : path.join(APP_ROOT, 'electron-boilerplate.exe')
+              ? path.join(APP_ROOT, 'electron-boilerplate.exe')
+              : path.join(APP_ROOT, 'electron-boilerplate')
         ),
         appArgs: ['foo', 'bar=baz']
       }
