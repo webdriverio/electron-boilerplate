@@ -1,5 +1,6 @@
 import url from 'node:url'
 import path from 'node:path'
+// import 'wdio-electron-service'
 
 import type { Options } from '@wdio/types'
 
@@ -61,12 +62,12 @@ export const config: Options.Testrunner = {
     //
     capabilities: [{
       browserName: 'electron',
-      browserVersion: '26.3.0',
+      browserVersion: '27.0.0',
       'wdio:electronServiceOptions': {
         appBinaryPath: path.join(__dirname, '..', 'out', 'electron-boilerplate-darwin-arm64', 'electron-boilerplate.app', 'Contents', 'MacOS', 'electron-boilerplate'),
         appArgs: ['foo', 'bar=baz']
       }
-    }],
+    } as any],
 
     //
     // ===================

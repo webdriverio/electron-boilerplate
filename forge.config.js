@@ -1,6 +1,7 @@
 module.exports = {
   packagerConfig: {
     asar: true,
+    prune: process.env.NODE_ENV !== 'test',
   },
   rebuildConfig: {},
   makers: [

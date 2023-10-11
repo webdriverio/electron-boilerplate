@@ -10,7 +10,7 @@
     "build:stencil": "stencil build",
     "package": "run-s package:*",
     "package:app": "run-s build",
-    "package:electron": "electron-forge package",
+    "package:electron": "NODE_ENV=test electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "start": "run-p start:*",
@@ -18,7 +18,7 @@
     "start:ts": "sleep 2 && tsc -w -p ./tsconfig.node.json",
     "start:stencil": "stencil build --dev --watch",
     "watch": "run-s start",
-    "wdio": "wdio run ./test/wdio.conf.ts"
+    "wdio": "NODE_ENV=test wdio run ./test/wdio.conf.ts"
   },
   "keywords": [],
   "author": {
@@ -27,8 +27,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@stencil/core": "^4.4.0",
-    "electron-squirrel-startup": "^1.0.0"
+    "@stencil/core": "^4.4.1",
+    "electron-squirrel-startup": "^1.0.0",
+    "semver-regex": "^4.0.5"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.4.2",
@@ -37,14 +38,14 @@
     "@electron-forge/maker-squirrel": "^6.4.2",
     "@electron-forge/maker-zip": "^6.4.2",
     "@electron-forge/plugin-auto-unpack-natives": "^6.4.2",
-    "@wdio/cli": "^8.16.22",
-    "@wdio/local-runner": "^8.16.22",
-    "@wdio/mocha-framework": "^8.16.22",
-    "@wdio/spec-reporter": "^8.16.22",
-    "electron": "26.3.0",
+    "@wdio/cli": "^8.17.0",
+    "@wdio/local-runner": "^8.17.0",
+    "@wdio/mocha-framework": "^8.17.0",
+    "@wdio/spec-reporter": "^8.17.0",
+    "electron": "27.0.0",
     "npm-run-all": "^4.1.5",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2",
-    "wdio-electron-service": "^5.0.0"
+    "wdio-electron-service": "file:../wdio-electron-service"
   }
 }

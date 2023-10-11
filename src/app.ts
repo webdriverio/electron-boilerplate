@@ -8,9 +8,8 @@ if (squirrelStartup) {
   app.quit()
 }
 
-const isTest = Boolean(process.env.TEST)
+const isTest = process.env.NODE_ENV === 'test'
 if (isTest) {
-  // @ts-expect-error
   import('wdio-electron-service/main');
 }
 
@@ -20,6 +19,7 @@ const createWindow = () => {
     width: 800,
     height: 600,
     webPreferences: {
+      sandbox: !isTest,
       preload: path.join(__dirname, 'preload.js'),
     },
   })

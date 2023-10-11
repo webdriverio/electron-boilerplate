@@ -1,7 +1,6 @@
 // See the Electron documentation for details on how to use preload scripts:
 // https://www.electronjs.org/docs/latest/tutorial/process-model#preload-scripts
-const isTest = Boolean(process.env.TEST)
+const isTest = process.env.NODE_ENV === 'test'
 if (isTest) {
-  // @ts-expect-error
-  import('wdio-electron-service/main');
+  import('wdio-electron-service/preload')
 }
