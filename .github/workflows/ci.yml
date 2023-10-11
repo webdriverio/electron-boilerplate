@@ -25,7 +25,9 @@ jobs:
       - name: 📦 Bundle Application
         run: npm run package
       - name: 🧪 Run Tests
-        run: npm test
+        uses: coactions/setup-xvfb@v1
+        with:
+          run: npm test
       - name: 🐛 Debug Build
         uses: stateful/vscode-server-action@v1
         if: failure()
