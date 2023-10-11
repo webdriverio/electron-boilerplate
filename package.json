@@ -17,8 +17,8 @@
     "start:electron": "sleep 3 && electron-forge start",
     "start:ts": "sleep 2 && tsc -w -p ./tsconfig.node.json",
     "start:stencil": "stencil build --dev --watch",
-    "watch": "run-s start",
-    "wdio": "NODE_ENV=test wdio run ./test/wdio.conf.ts"
+    "test": "NODE_ENV=test wdio run ./test/wdio.conf.ts",
+    "watch": "run-s start"
   },
   "keywords": [],
   "author": {
