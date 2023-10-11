@@ -4,16 +4,23 @@
     "allowUnreachableCode": false,
     "declaration": false,
     "experimentalDecorators": true,
-    "lib": ["dom", "es2020"],
-    "module": "NodeNext",
+    "lib": [
+      "dom",
+      "es2020"
+    ],
+    "moduleResolution": "node",
+    "module": "esnext",
     "target": "es2020",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "jsx": "react",
     "jsxFactory": "h",
-    "jsxFragmentFactory": "Fragment",
-    "skipLibCheck": true
+    "jsxFragmentFactory": "Fragment"
   },
-  "include": ["src"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

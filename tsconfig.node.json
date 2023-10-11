@@ -2,10 +2,10 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "module": "commonjs",
-    "moduleResolution": "node",
     "target": "es2020",
     "outDir": "dist",
     "esModuleInterop": true
   },
-  "include": ["src/app.ts", "src/preload.ts", "test/test.e2e.ts"]
+  "include": ["src/app.ts", "src/preload.ts"],
+  "exclude": ["node_modules"]
 }
