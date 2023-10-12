@@ -70,7 +70,7 @@ export class AppRoot {
             and save to change application.
           </p>
         </div>
-        <p class="read-the-docs"> {this.docsHint}</p>
+        <p class="read-the-docs">{this.docsHint}</p>
       </>
     );
   }

@@ -26,7 +26,7 @@ export const config: Options.Testrunner = {
     // will be called from there.
     //
     specs: [
-        './**/*.e2e.ts'
+        './e2e/test.e2e.ts'
     ],
     // Patterns to exclude.
     exclude: [

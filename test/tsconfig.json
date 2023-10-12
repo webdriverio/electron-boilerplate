@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
     "types": ["@wdio/globals/types", "wdio-electron-service"]
-  }
+  },
+  "include": ["**/*.ts"]
 }

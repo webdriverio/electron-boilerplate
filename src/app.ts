@@ -1,6 +1,6 @@
 import path from 'node:path'
 
-import { app, shell, ipcMain, dialog, BrowserWindow, type MessageBoxOptions } from 'electron'
+import { app, shell, ipcMain, dialog, BrowserWindow, type MessageBoxOptions, type IpcMainInvokeEvent } from 'electron'
 import squirrelStartup from 'electron-squirrel-startup'
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -18,8 +18,8 @@ if (isTest) {
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1024,
+    height: 768,
     title,
     resizable: false,
     webPreferences: {
@@ -45,6 +45,12 @@ const createWindow = () => {
   ipcMain.on('dialog', (_: any, params: MessageBoxOptions) => {
     dialog.showMessageBox(params);
   });
+
+  ipcMain.handle('wdio-electron', (_: IpcMainInvokeEvent, cmd: string) => {
+    if (cmd === 'openChatWindow') {
+      mainWindow.loadURL('https://socketio-chat-h9jt.herokuapp.com/')
+    }
+  })
 }
 
 // This method will be called when Electron has finished
