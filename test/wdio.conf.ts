@@ -1,13 +1,6 @@
-import url from 'node:url'
-import path from 'node:path'
-// import 'wdio-electron-service'
-
 import type { Options } from '@wdio/types'
 
-const __dirname = path.dirname(url.fileURLToPath(import.meta.url))
 process.env.TEST = 'true'
-
-const APP_ROOT = path.join(__dirname, '..', 'out', `electron-boilerplate-${process.platform}-${process.arch}`)
 
 export const config: Options.Testrunner = {
     //
@@ -16,7 +9,6 @@ export const config: Options.Testrunner = {
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
     runner: 'local',
-
     //
     // ==================
     // Specify Test Files
@@ -63,19 +55,8 @@ export const config: Options.Testrunner = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-      browserName: 'electron',
-      browserVersion: '27.0.0',
-      'wdio:electronServiceOptions': {
-        appBinaryPath: (
-          process.platform === 'darwin'
-            ? path.join(APP_ROOT, 'electron-boilerplate.app', 'Contents', 'MacOS', 'electron-boilerplate')
-            : process.platform === 'win32'
-              ? path.join(APP_ROOT, 'electron-boilerplate.exe')
-              : path.join(APP_ROOT, 'electron-boilerplate')
-        ),
-        appArgs: ['foo', 'bar=baz']
-      }
-    } as any],
+      browserName: 'electron'
+    }],
 
     //
     // ===================
@@ -103,12 +84,6 @@ export const config: Options.Testrunner = {
     // If you only want to run your tests until a specific amount of tests have failed use
     // bail (default is 0 - don't bail, run all tests).
     bail: 0,
-    //
-    // Set a base URL in order to shorten url command calls. If your `url` parameter starts
-    // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
-    // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
-    // gets prepended directly.
-    baseUrl: '',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -147,8 +122,6 @@ export const config: Options.Testrunner = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
     reporters: ['spec'],
-
-
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -252,8 +225,6 @@ export const config: Options.Testrunner = {
      */
     // afterTest: function(test, context, { error, result, duration, passed, retries }) {
     // },
-
-
     /**
      * Hook that gets executed after the suite has ended
      * @param {object} suite suite details

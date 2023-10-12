@@ -18,7 +18,7 @@
     "start:electron": "sleep 3 && electron-forge start",
     "start:ts": "sleep 2 && tsc -w -p ./tsconfig.json",
     "start:stencil": "stencil build --dev --watch",
-    "test": "cross-env TS_NODE_PROJECT=./tsconfig.stencil.json NODE_ENV=test wdio run ./test/wdio.conf.ts",
+    "test": "NODE_ENV=test wdio run ./test/wdio.conf.ts",
     "watch": "run-s start"
   },
   "keywords": [],
@@ -49,6 +49,6 @@
     "rimraf": "^5.0.5",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2",
-    "wdio-electron-service": "^5.1.1"
+    "wdio-electron-service": "^5.2.0"
   }
 }
