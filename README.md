@@ -20,4 +20,5 @@ Choose one of the following options:
 
 - Super simple setup
 - ESNext ready
+- Showcases single and multiremote testing, e.g. testing a chat application in ElectronJS and Chrome
 - Example using [GitHub Actions](https://github.com/features/actions)
