@@ -6,6 +6,12 @@ export const config: Config = {
   globalScript: 'src/global/app.ts',
   taskQueue: 'async',
   tsconfig: 'tsconfig.stencil.json',
+  rollupConfig: {
+    inputOptions: {
+      // @ts-expect-error
+      external: /electron/,
+    }
+  },
   outputTargets: [
     {
       type: 'www',

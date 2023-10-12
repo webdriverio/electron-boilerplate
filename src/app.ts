@@ -1,6 +1,6 @@
 import path from 'node:path'
 
-import { app, shell, BrowserWindow } from 'electron'
+import { app, shell, ipcMain, dialog, BrowserWindow, type MessageBoxOptions } from 'electron'
 import squirrelStartup from 'electron-squirrel-startup'
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -8,7 +8,9 @@ if (squirrelStartup) {
   app.quit()
 }
 
+const title = 'WebdriverIO + Electron Boilerplate'
 const isTest = process.env.NODE_ENV === 'test'
+const isDev = process.env.NODE_ENV === 'dev'
 if (isTest) {
   require('wdio-electron-service/main')
 }
@@ -18,14 +20,17 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    title,
+    resizable: false,
     webPreferences: {
       sandbox: !isTest,
       preload: path.join(__dirname, 'preload.js'),
-    },
+    }
   })
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'))
+  mainWindow.setTitle(title)
 
   mainWindow.webContents.setWindowOpenHandler(({ url }) => {
     shell.openExternal(url);
@@ -33,13 +38,22 @@ const createWindow = () => {
   })
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  if (isDev) {
+    mainWindow.webContents.openDevTools()
+  }
+
+  ipcMain.on('dialog', (_: any, params: MessageBoxOptions) => {
+    dialog.showMessageBox(params);
+  });
 }
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', createWindow)
+
+// set correct icon during development
+app.dock.setIcon(path.join(__dirname, 'assets', 'icon', 'webdriverio.png'))
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits

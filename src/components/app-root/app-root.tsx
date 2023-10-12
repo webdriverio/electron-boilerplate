@@ -1,4 +1,13 @@
 import { Component, Prop, h, Fragment } from "@stencil/core";
+import type { MessageBoxOptions } from 'electron'
+
+declare global {
+  interface Window {
+    electron: {
+      openDialog: (options: MessageBoxOptions) => void;
+    };
+  }
+}
 
 @Component({ tag: "app-root", shadow: true, styleUrl: "app-root.css" })
 export class AppRoot {
@@ -10,6 +19,19 @@ export class AppRoot {
       return name.slice(0, 1).toUpperCase() + name.slice(1).toLowerCase();
     }
     return "";
+  }
+
+  #handleClick () {
+    this.count = this.count + 1;
+
+    if (this.count > 5) {
+      window.electron.openDialog({
+        type: 'info',
+        title: 'Limit reached',
+        message: 'You have reached the limit of 5 clicks.',
+        icon: 'info',
+      })
+    }
   }
 
   render() {
@@ -37,9 +59,7 @@ export class AppRoot {
         </h1>
         <div class="card">
           <button
-            onClick={() => {
-              this.count = this.count + 1;
-            }}
+            onClick={this.#handleClick.bind(this)}
             part="button"
           >
             count is {this.count}{" "}

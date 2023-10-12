@@ -1,6 +1,6 @@
 {
   "name": "electron-boilerplate",
-  "productName": "electron-boilerplate",
+  "productName": "WebdriverIO + Electron Boilerplate",
   "version": "1.0.0",
   "description": "My Electron application description",
   "main": "dist/app.js",
@@ -15,10 +15,10 @@
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "start": "run-p start:*",
-    "start:electron": "sleep 3 && electron-forge start",
+    "start:electron": "sleep 3 && cross-env NODE_ENV=dev electron-forge start",
     "start:ts": "sleep 2 && tsc -w -p ./tsconfig.json",
     "start:stencil": "stencil build --dev --watch",
-    "test": "NODE_ENV=test wdio run ./test/wdio.conf.ts",
+    "test": "cross-env NODE_ENV=test wdio run ./test/wdio.conf.ts",
     "watch": "run-s start"
   },
   "keywords": [],
