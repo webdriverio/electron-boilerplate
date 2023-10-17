@@ -4,8 +4,7 @@
     "module": "commonjs",
     "target": "es2020",
     "outDir": "dist",
-    "esModuleInterop": true,
-    "types": ["@wdio/globals/types"]
+    "esModuleInterop": true
   },
   "include": ["src/app.ts", "src/preload.ts"],
   "exclude": ["node_modules"]

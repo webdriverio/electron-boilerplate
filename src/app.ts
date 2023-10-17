@@ -11,9 +11,6 @@ if (squirrelStartup) {
 const title = 'WebdriverIO + Electron Boilerplate'
 const isTest = process.env.NODE_ENV === 'test'
 const isDev = process.env.NODE_ENV === 'dev'
-if (isTest) {
-  require('wdio-electron-service/main')
-}
 
 const createWindow = () => {
   // Create the browser window.
@@ -45,12 +42,6 @@ const createWindow = () => {
   ipcMain.on('dialog', (_: any, params: MessageBoxOptions) => {
     dialog.showMessageBox(params);
   });
-
-  ipcMain.handle('wdio-electron', (_: IpcMainInvokeEvent, cmd: string) => {
-    if (cmd === 'openChatWindow') {
-      mainWindow.loadURL('https://socketio-chat-h9jt.herokuapp.com/')
-    }
-  })
 }
 
 // This method will be called when Electron has finished
