@@ -11,7 +11,6 @@ a:hover {
 
 h1 {
   font-size: 3.2em;
-  line-height: 1.1;
 }
 
 button {
@@ -51,7 +50,7 @@ button:focus-visible {
 }
 
 .logo {
-  height: 12em;
+  height: 18em;
   padding: 1.5em;
   will-change: filter;
 }
@@ -89,5 +88,5 @@ code {
 }
 
 .read-the-docs {
-  color: #888;
+  color: #bbb;
 }

@@ -5,7 +5,7 @@ import MakerDMG from '@electron-forge/maker-dmg'
 import MakerZIP from '@electron-forge/maker-zip'
 import type { ForgeConfig } from '@electron-forge/shared-types'
 
-const icon = path.join(__dirname, 'src', 'assets', 'icon', 'webdriverio')
+const icon = path.join(__dirname, 'src', 'assets', 'icon', 'osff')
 
 const config: ForgeConfig = {
   packagerConfig: {

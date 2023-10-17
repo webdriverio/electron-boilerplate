@@ -12,7 +12,7 @@ declare global {
 @Component({ tag: "app-root", shadow: true, styleUrl: "app-root.css" })
 export class AppRoot {
   @Prop() count = 0;
-  @Prop() docsHint = "Click on the project logos to learn more!";
+  @Prop() docsHint = "NEW YORK, NY | #OSFF2023 | #OSINFINANCE";
 
   normalize(name: string): string {
     if (name) {
@@ -38,19 +38,11 @@ export class AppRoot {
     return (
       <>
         <div>
-          <a href="https://webdriver.io/docs/component-testing" target="_blank">
+          <a href="https://events.linuxfoundation.org/open-source-finance-forum-new-york/" target="_blank">
             <img
-              src="https://webdriver.io/assets/images/robot-3677788dd63849c56aa5cb3f332b12d5.svg"
+              src="https://events.linuxfoundation.org/wp-content/uploads/2022/02/2022_OSFF_FINOS_LINUX_WHT.svg"
               class="logo"
               alt="WebdriverIO logo"
-            />
-          </a>
-
-          <a href="https://www.electronjs.org" target="_blank">
-            <img
-              src="https://www.electronjs.org/assets/img/logo.svg"
-              class="logo electron"
-              alt="React logo"
             />
           </a>
         </div>
@@ -62,12 +54,10 @@ export class AppRoot {
             onClick={this.#handleClick.bind(this)}
             part="button"
           >
-            count is {this.count}{" "}
+            attendee count is {this.count}{" "}
           </button>
           <p>
-            Edit
-            <code>src/app-root.tsx</code>
-            and save to change application.
+          Open Source in Finance Forum is the only conference dedicated to driving collaboration and innovation in financial services through open source software and standards.
           </p>
         </div>
         <p class="read-the-docs">{this.docsHint}</p>
