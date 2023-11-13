@@ -5,7 +5,8 @@
     "target": "es2020",
     "outDir": "dist",
     "esModuleInterop": true,
-    "types": ["@wdio/globals/types"]
+    "types": ["@wdio/globals/types"],
+    "skipLibCheck": true
   },
   "include": ["src/app.ts", "src/preload.ts"],
   "exclude": ["node_modules"]
