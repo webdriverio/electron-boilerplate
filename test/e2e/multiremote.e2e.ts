@@ -6,7 +6,7 @@ describe('Multiremote', () => {
     const app = multiremotebrowser.getInstance('app')
     const browser = multiremotebrowser.getInstance('browser')
 
-    app.electron.api('openChatWindow')
+    browser.execute(() => window.wdioElectron.execute('openChatWindow'))
     await app.waitUntil(async () => (
       (await app.getTitle()) === 'Socket.IO Chat Example'
     ))

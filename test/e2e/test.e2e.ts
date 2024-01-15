@@ -2,8 +2,10 @@ import { expect, browser, $ } from '@wdio/globals'
 
 describe('Electron Testing', () => {
   it('should print application metadata', async () => {
-    expect(await browser.electron.app('getName')).toBe('WebdriverIO + Electron Boilerplate')
-    expect(await browser.electron.app('getVersion')).toBe('1.0.0')
+    expect(await browser.electron.execute((electron) => electron.app.getName()))
+      .toBe('WebdriverIO + Electron Boilerplate')
+    expect(await browser.electron.execute((electron) => electron.app.getVersion()))
+      .toBe('1.0.0')
   })
 
   it('can click on button', async () => {
