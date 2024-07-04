@@ -8,7 +8,6 @@ export const config: Config = {
   tsconfig: 'tsconfig.stencil.json',
   rollupConfig: {
     inputOptions: {
-      // @ts-expect-error
       external: /electron/,
     }
   },
