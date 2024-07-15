@@ -48,7 +48,7 @@
     "cross-env": "^7.0.3",
     "electron": "30.0.6",
     "npm-run-all2": "^6.1.2",
-    "rimraf": "^5.0.5",
+    "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5",
     "wdio-electron-service": "^6.4.1"
