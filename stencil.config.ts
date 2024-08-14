@@ -8,7 +8,7 @@ export const config: Config = {
   tsconfig: 'tsconfig.stencil.json',
   rollupConfig: {
     inputOptions: {
-      external: /electron/,
+      external: ['electron'],
     }
   },
   outputTargets: [
