@@ -1,6 +1,6 @@
 import { config as baseConfig } from './wdio.conf'
 
-export const config: WebdriverIO.Config = {
+export const config: WebdriverIO.MultiremoteConfig = {
   ...baseConfig,
   specs: ['./e2e/multiremote.e2e.ts'],
   capabilities: {

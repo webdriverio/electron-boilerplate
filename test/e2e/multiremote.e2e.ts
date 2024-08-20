@@ -1,7 +1,11 @@
 import { Key } from 'webdriverio'
 import { multiremotebrowser } from "@wdio/globals"
 
-describe('Multiremote', () => {
+/**
+ * skipped as target application is not available anymore
+ * see https://github.com/webdriverio/electron-boilerplate/issues/208
+ */
+describe.skip('Multiremote', () => {
   it('should open chat window', async () => {
     const app = multiremotebrowser.getInstance('app')
     const browser = multiremotebrowser.getInstance('browser')
