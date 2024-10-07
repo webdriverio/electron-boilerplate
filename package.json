@@ -30,7 +30,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@stencil/core": "4.21.0",
+    "@stencil/core": "4.22.0",
     "electron-squirrel-startup": "^1.0.1",
     "semver-regex": "^4.0.5"
   },
