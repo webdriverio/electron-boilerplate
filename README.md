@@ -16,6 +16,8 @@ Choose one of the following options:
 
 3. Merge project dev dependencies with your projects dev dependencies in your `package.json`
 
+4. Bundle the application for testing (`npm run package:test`) or for production (`npm run package`), then run `npm test`
+
 ## Features
 
 - Super simple setup
