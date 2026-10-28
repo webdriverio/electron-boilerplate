@@ -46,9 +46,9 @@ const createWindow = () => {
     dialog.showMessageBox(params);
   });
 
-  ipcMain.handle('wdio-electron', (_: IpcMainInvokeEvent, cmd: string) => {
-    if (cmd === 'openChatWindow') {
-      mainWindow.loadURL('https://socketio-chat-h9jt.herokuapp.com/')
+  ipcMain.handle('wdio-electron', (_: IpcMainInvokeEvent, cmd: string, url?: string) => {
+    if (cmd === 'openChatWindow' && url) {
+      mainWindow.loadURL(url)
     }
   })
 }

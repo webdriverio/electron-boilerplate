@@ -1,6 +1,11 @@
 {
   "compilerOptions": {
-    "types": ["@wdio/globals/types", "wdio-electron-service", "mocha"]
+    "target": "es2022",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "types": ["node", "@wdio/globals/types", "wdio-electron-service", "mocha"]
   },
   "include": ["**/*.ts"]
 }
